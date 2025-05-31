@@ -1,0 +1,55 @@
+Task 4 : Setup and Use a Firewall on Windows/Linux
+
+Commands Used in the following task :
+
+ 1: Install UFW :
+    sudo apt update
+    sudo apt install ufw
+    
+ 2: Enable UFW :
+    sudo ufw enable
+    Resul : Firewall is active and enabled on system startup
+
+ 3: Check Status :
+    sudo ufw status verbose
+    Result : 
+ 	Status: active
+	Logging: on (low)
+	Default: deny (incoming), allow (outgoing), disabled (routed)
+	New profiles: skip
+
+ 4: Block Port 23 :
+    sudo ufw deny 23
+    Result:
+	Rule added
+	Rule added (v6)
+	
+ 5: Allow Port 22 :
+    sudo ufw allow 22
+    Result:
+	Rule added
+	Rule added (v6)
+	
+ 6: Removw Block Rule :
+    sudo ufw delete deny 23
+    Result:
+	Rule deleted
+	Rule deleted (v6)
+	
+ 7: Final Status observe :
+    sudo ufw status verbose
+    Result:
+	Status: active
+	Logging: on (low)
+	Default: deny (incoming), allow (outgoing), disabled (routed)
+	New profiles: skip
+
+	To                         Action      From
+	--                         ------      ----
+	22                         ALLOW IN    Anywhere                  
+	22 (v6)                    ALLOW IN    Anywhere (v6)   
+	        
+
+
+	
+	
